@@ -1,0 +1,162 @@
+﻿@model CarRentalApp.DTO.CustomerDTO
+
+<div class="d-flex justify-content-center align-items-center my-5">
+
+    <div class="w-100 mx-4">
+        <div class="card border-0 rounded-0">
+            <div class="card-header">
+                <div class="card-title">
+                    <h5 class="text-primary p-1">Personal Details</h5> 
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="p-2">
+                    <i class="fa-solid fa-circle-user fa-2x" style="color: #63E6BE; position:relative; top: 5px;"></i>
+                    <span class="fs-5 text-uppercase font-monospace mx-3">@Model.Name</span>
+                </div>
+                 <div class="p-2">
+                    <i class=""></i>
+                    <i class="fa-solid fa-square-envelope fa-2x" style="color: #63E6BE; position:relative; top: 5px;"></i>
+                    <span class="fs-5 text-uppercase font-monospace mx-3">@Model.Email</span>
+                </div>
+
+                 <div class="p-2">
+                    <i class="fa-solid fa-square-phone fa-2x" style="color: #63E6BE; position:relative; top: 5px;"></i>
+                    <span class="fs-5 text-uppercase font-monospace mx-3">@Model.Phone</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="my-3 card border-0 rounded-0">
+            <div class="card-header">
+                <div class="card-title">
+                    <h5 class="text-primary p-1">Verification Details</h5> 
+                </div>
+            </div>
+            @if(@Model.VerifiedStatus == "verified")
+            {
+                <div class="card-body">
+                    <div class="row fs-5">
+                        <div class="col-sm-4 text-center">
+                            <p><span class="font-monospace fw-bold">Name:</span>  @Model.Name</p>
+                        </div>
+                        <div class="col-sm-4 text-center">
+                            <p><span class="font-monospace fw-bold">Email:</span> @Model.Email</p>
+                        </div>
+                        <div class="col-sm-4 text-center">
+                            <p><span class="font-monospace fw-bold">Phone:</span> @Model.Phone</p>
+                        </div>
+                    </div>
+                </div>
+            }
+            else if(@Model.VerifiedStatus == "pending")
+            {
+                <h6>@Model.DrivingLiscenceNumber</h6>
+                <h6>@Model.DL_img_back</h6>
+                <h6>@Model.DL_img_front</h6>
+                <h6>@Model.AddressIdNumber</h6>
+                <h6>@Model.AddressIdType</h6>
+            }
+            else
+            {
+                <div class="text-center mt-4">
+                    <p class="text-danger">You Are Not verified yet. You cannot rent any car until you get verified</p>
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#verificationForm">Add Verification Details</button>
+                </div>
+
+                <div class="modal modal-lg fade" id="verificationForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title text-primary">Add Verification Details</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                        
+                            <div class="modal-body">
+                                <div class="container">
+                                    <form id="verificationDetails" method="post" enctype="multipart/form-data">
+                                        <input asp-for="CustId" type="hidden">
+                                        <div class="row mt-2">
+                                            <div class="col-md-12">
+                                                <label for="DrivingLiscenceNumber">Driving Liscence Number</label>
+                                                <input  asp-for="DrivingLiscenceNumber" type="text" value="" class="form-control">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="row mt-2">
+
+                                            <div class="col-md-6">
+                                                <label for="AddressIdType">Address Id Type</label>
+                                                <select asp-for="AddressIdType" class="form-select">
+                                                    <option value="aadhar_card"  selected>Aadhar Card</option>
+                                                    <option value="pan_card">Pan Card</option>
+                                                    <option value="voterid_card" >Voter Id Card</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <label for="AddressIdNumber">Address Id Number</label>
+                                                <input asp-for="AddressIdNumber" type="text" value="" class="form-control">
+                                            </div>
+
+                                        </div>
+
+                                        <div class="row mt-2">
+                                            <div class="col-md-6">
+                                                <label for="img_front_DL">Driving Lisence Front Image</label>
+                                                <input id="DL_img_front" name="img_front_DL" type="file" accept="image/.png,.jpg,.jpeg" class="form-control">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="img_back_DL">Driving Lisence Back Image</label>
+                                                <input id="img_back_DL" name="img_back_DL" type="file" accept="image/.png,.jpg,.jpeg" class="form-control">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="modal-footer d-block text-center">
+                                            <button type="submit" id="submitButton" class="btn btn-success rounded-pill px-3">Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+</div>
+
+<script>
+    $(document).ready(()=>{
+        $("#verificationDetails").on('submit', (e)=>{
+            e.preventDefault();
+            alert("clicked");
+            var data = new FormData($("#verificationDetails")[0]);
+
+            //data.append()
+            var t = $("input[name='__RequestVerificationToken']").val();
+
+            console.log(data);
+            //let data = new FormData();
+            alert(data);
+            $.ajax({
+                url: '/Customer/AddVerificationData',
+                headers: {"RequestVerificationToken": t},
+                method: 'post',
+                data: data,
+                processData: false,
+                contentType: false,
+                success: (res)=>{
+                    alert(res);
+                },
+
+                error: (res)=>{
+                    alert(res);
+                }
+            });
+        });
+    })
+</script>

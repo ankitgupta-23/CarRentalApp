@@ -1,0 +1,123 @@
+﻿.navbar-toggler span {
+    display: block;
+    background-color: #000000;
+    height: 3px;
+    width: 25px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    position: relative;
+    left: 0;
+    opacity: 1;
+    transition: all 0.2s ease-out;
+    transform-origin: center left;
+}
+
+.navbar-toggler span:nth-child(1) {
+        margin-top: 0.3em;
+}
+
+.navbar-toggler:not(.collapsed) span:nth-child(1) {
+    transform: translate(15%, -33%) rotate(45deg);
+}
+
+.navbar-toggler:not(.collapsed) span:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-toggler:not(.collapsed) span:nth-child(3) {
+    transform: translate(15%, 33%) rotate(-45deg);
+}
+
+.navbar-toggler span:nth-child(1) {
+    transform: translate(0%, 0%) rotate(0deg);
+}
+
+.navbar-toggler span:nth-child(2) {
+    opacity: 1;
+}
+
+.navbar-toggler span:nth-child(3) {
+    transform: translate(0%, 0%) rotate(0deg);
+}
+
+.nav-item a {
+    font-family: "Tektur", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    color: rgb(0, 0, 0);
+    font-style: normal;
+}
+
+.nav-item a:hover {
+    color: red;
+}
+
+.action-btn {
+    text-align: center;
+    border-radius: 14px;
+    padding: 8px;
+    box-shadow: 2px 3px 2px rgb(77, 92, 138);
+    color: black !important;
+}
+
+.action-btn-login {
+    color: rgb(0, 0, 0);
+    background-color: rgb(199, 255, 163);
+}
+
+    .action-btn-login:hover {
+        background-color: rgb(255, 121, 100);
+    }
+
+.action-btn-register:hover {
+    background-color: rgb(66, 255, 233);
+}
+
+.action-btn-register {
+    background-color: #cccbff;
+}
+
+nav {
+    box-shadow: 3px 7px 8px 3px rgb(197, 197, 197);
+}
+
+
+
+@media only screen and (max-width: 768px) {
+
+    .action-btn {
+        margin: 10px;
+    }
+}
+
+.change-color {
+    color: red;
+}
+
+
+.animate {
+    opacity: 0;
+}
+
+    .animate.animate__animated {
+        opacity: 1;
+    }
+
+footer {
+    background-color: #eeeeee;
+    font-family: 'Tektur';
+    bottom: 0;
+    
+    
+}
+
+
+
+#call-to-action-btn {
+    box-shadow: 0px 5px 9px 3px rgb(149, 178, 180);
+    border: none;
+}
+
+    #call-to-action-btn:hover {
+        background-color: crimson;
+    }

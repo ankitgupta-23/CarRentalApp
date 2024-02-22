@@ -1,0 +1,37 @@
+﻿@model CarRentalApp.DTO.LoginDTO
+
+
+<div class="d-flex justify-content-center align-items-center my-5">
+    <div class="col-lg-4 col-md-5 container-sm mx-5 border border-2 rounded-3 p-4">
+        <h4 class="text-center pt-3">Login</h4>
+        <form asp-action="Login">
+            
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <span class="d-block text-danger text-center">@TempData["login-error"]</span>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group text-center mt-3">
+                <input type="submit" value="Login" class="btn btn-success rounded-pill px-4" />
+            </div>
+            <div class="text-center p-1 mt-1">
+                <p>Not Registered Yet?
+                    <span><a asp-action="Register" asp-controller="Customer">Register</a></span>
+                </p>
+                
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

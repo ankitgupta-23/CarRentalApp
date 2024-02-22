@@ -1,0 +1,302 @@
+﻿@{
+    ViewData["Title"] = "Search Cars";
+    
+}
+<link href="~/css/carsearch.css" rel="stylesheet" />
+
+    <div class="container-fluid d-flex justify-content-center align-items-center mt-1" id="search_car_div">
+        <div>
+            <h4 class="text-center m-3 fs-2" style="color: #d6ff77; font-family: 'Lemon';">Plan Your Next Journey....</h4>
+            <form action="">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div id="date-from">
+                            <label class="form-label fw-bold text-light">Pickup Date and Time</label>
+                            <input type="datetime-local" class="form-control d-inline" id="pickup-date">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="date-to">
+                            <label class="form-label fw-bold text-light">Dropoff Date and Time</label>
+                            <input type="datetime-local" class="form-control d-inline" id="dropoff-date">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="text-center m-3">
+
+                    <a href="javaScript:void(0);" class="btn btn-primary px-4 rounded-pill" id='search-btn'>Search</a>
+
+                </div>
+
+
+            </form>
+        </div>
+
+
+
+    </div>
+
+
+    <!-- filter options-->
+    <a role="button" class="fs-3 text-center d-block d-lg-none" type="button" id="filter-btn" data-bs-toggle="collapse" data-bs-target="#filter-menu" aria-expanded="false" aria-controls="collapseExample" style="text-decoration: none;">
+        <i class="fa-solid fa-filter" style="color: #2c88dd;"></i>Filters
+    </a>
+
+
+    </p>
+
+    <div class="container-fluid mb-3 mt-3">
+        <div class="row gy-3">
+            <div class="col-12 col-md-3 d-md-block collapse" id="filter-menu">
+                <div class="card shadow rounded-3" style="background-color: rgb(239, 239, 239);">
+
+                    <div class="card-body">
+                        <h5 class="card-title">Filters</h5>
+                        <form id='fiter-form'>
+                            <div class="m-2">
+                                <h6 class="m-2">Brand</h6>
+                                <select class="form-select">
+                                    <option>Select Brand</option>
+                                    <option>Tata</option>
+                                    <option>Tata</option>
+                                    <option>Tata</option>
+                                    <option>Tata</option>
+                                </select>
+                            </div>
+                            <div class="m-2">
+                                <h6 class="m-2">Model</h6>
+                                <select class="form-select">
+                                    <option>Select Model</option>
+                                    <option>Tata</option>
+                                    <option>Tata</option>
+                                    <option>Tata</option>
+                                    <option>Tata</option>
+                                </select>
+                            </div>
+                            <div class="m-2">
+                                <h6 class="m-2">Body Type</h6>
+                                <div class="form-check mx-2">
+                                    <input class="form-check-input" type="checkbox" value="" id="Hatchback ">
+                                    <label class="form-check-label" for="Hatchback ">
+                                        Hatchback
+                                    </label>
+                                </div>
+                                <div class="form-check mx-2">
+                                    <input class="form-check-input" type="checkbox" value="" id="Sedan">
+                                    <label class="form-check-label" for="Sedan">
+                                        Sedan
+                                    </label>
+                                </div>
+                                <div class="form-check mx-2">
+                                    <input class="form-check-input" type="checkbox" value="" id="StationWagon">
+                                    <label class="form-check-label" for="StationWagon">
+                                        Station Wagon
+                                    </label>
+                                </div>
+
+                                <div class="form-check mx-2">
+                                    <input class="form-check-input" type="checkbox" value="" id="SportsCar">
+                                    <label class="form-check-label" for="SportsCar">
+                                        Sports Car
+                                    </label>
+                                </div>
+
+                                <div class="form-check mx-2">
+                                    <input class="form-check-input" type="checkbox" value="" id="SUV">
+                                    <label class="form-check-label" for="SUV">
+                                        SUV
+                                    </label>
+                                </div>
+
+                            </div>
+
+
+                            <div class="m-2">
+                                <h6 class="m-2">Fuel Type</h6>
+                                <div class="form-check form-check-inline mx-1">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="diesel" checked>
+                                    <label class="form-check-label" for="inlineRadio1">Diesel</label>
+                                </div>
+                                <div class="form-check form-check-inline mx-1">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="cng">
+                                    <label class="form-check-label" for="inlineRadio2">CNG</label>
+                                </div>
+                            </div>
+
+                            <div class="text-center mt-2">
+                                <a href="javaScript:void(0)" class="btn btn-primary d-block rounded-pill" id='apply-filter-btn'>Apply</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <div class="conatiner-fluid">
+                    <div class="row">
+                        <div class="col-md-6 mt-3">
+                            <div class="card shadow-lg rounded-3">
+                                <div class="text-center">
+                                    <img src="./car_2.png" class="card-img-top" alt="" style="height: 70%; width: 70%;">
+
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        <h3 class="text-center">Tata SUV-1900</h3>
+                                    </div>
+                                    <div class="container-fluid text-center">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <p>Brand: Tata</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p>Model: SUV-199</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text-center">
+                                        <a href="#" class="btn btn-success rounded-pill px-4 rent-btn">Rent Now</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-3">
+                            <div class="card shadow-lg rounded-3">
+                                <div class="text-center">
+                                    <img src="./car_2.png" class="card-img-top" alt="" style="height: 70%; width: 70%;">
+
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        <h3 class="text-center">Tata SUV-1900</h3>
+                                    </div>
+                                    <div class="container-fluid text-center">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <p>Brand: Tata</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p>Model: SUV-199</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text-center">
+                                        <a href="#" class="btn btn-success rounded-pill px-4 rent-btn">Rent Now</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mt-3">
+                            <div class="card shadow-lg rounded-3">
+                                <div class="text-center">
+                                    <img src="./car_2.png" class="card-img-top" alt="" style="height: 70%; width: 70%;">
+
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        <h3 class="text-center">Tata SUV-1900</h3>
+                                    </div>
+                                    <div class="container-fluid text-center">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <p>Brand: Tata</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p>Model: SUV-199</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text-center">
+                                        <a href="#" class="btn btn-success rounded-pill px-4 rent-btn">Rent Now</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-3">
+                            <div class="card shadow-lg rounded-3">
+                                <div class="text-center">
+                                    <img src="./car_2.png" class="card-img-top" alt="" style="height: 70%; width: 70%;">
+
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        <h3 class="text-center">Tata SUV-1900</h3>
+                                    </div>
+                                    <div class="container-fluid text-center">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <p>Brand: Tata</p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p>Model: SUV-199</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="text-center">
+                                        <a href="#" class="btn btn-success rounded-pill px-4 rent-btn">Rent Now</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+<script>
+    $(document).ready(()=>{
+
+        //validation of dates:
+        $("#pickup-date").on('change', (e)=>{
+            //let dropoff_date = new Date($("#dropoff-date").val());
+            //let pickup_date = new Date(e.target.value);
+
+            $("#dropoff-date").attr('min', e.target.value);
+
+        });
+
+
+         $("#dropoff-date").on('change', (e)=>{
+            //let dropoff_date = new Date($("#dropoff-date").val());
+            //let pickup_date = new Date(e.target.value);
+
+            $("#pickup-date").attr('min', e.target.value);
+
+        });
+
+
+
+        $("#search-btn").click(()=>{
+
+            let filter_data = ("#filter-form").serialize();
+            console.log(serialize);
+        });
+
+        $("apply-filter-btn").click(()=>{
+            let filter_data = ("#filter-form").serialize();
+            console.log(serialize);
+        });
+    });
+</script>
+
+
+
+
+

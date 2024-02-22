@@ -1,0 +1,16 @@
+﻿#search_car_div {
+    background-image: url('../static/homepage/bg_top.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;   
+}
+
+.rent-btn {
+    color: white;
+    border: none;
+    box-shadow: 1px 4px 5px 2px rgb(195, 195, 195);
+}
+
+.rent-btn:hover {
+        background-color: crimson;
+}

@@ -1,0 +1,199 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+<div class="container my-3" id="top-div">
+    <div class="row">
+        <div class="col-md-6 mt-2 d-flex align-items-center justify-content-center" id="top-div-col-1">
+            <div class="text-center" style="font-family: Tektur;">
+                <h2 class="display-3" id="top-div-text-1">Revolutionize Your Ride</h2>
+                <p class="fs-3 mb-2" id="top-div-text-2">Transforming Miles into Smiles</p>
+                <div class="mt-4 p-2">
+                    <a asp-action="SearchCar" asp-controller="Customer" class="btn btn-primary px-5 py-3 rounded-pill animate" id="call-to-action-btn">Rent Now</a>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="col-md-6">
+            <img src="~/static/homepage/cars_top_div.gif" class="img-fluid" alt="" id="top-div-img">
+        </div>
+    </div>
+</div>
+
+<div class="text-center mt-2">
+    <h3 class="mb-5 text-primary animate" style="font-family: Tektur;" id="steps-heading">
+        Three Simple Steps For
+        Your Amazing Journey
+    </h3>
+
+    <div class="container mt-3 animate" id="step1_div">
+        <div class="row gx-4">
+            <div class="col-md-4 mb-2">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="~/static/homepage/step_01.svg" alt="" class="img-fluid w-50 h-50">
+                        <h5 class="card-title mt-3">01. Sign Up</h5>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-2 animate" id="step2_div">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="~/static/homepage/step_02.svg" alt="" class="img-fluid w-50 h-50">
+                        <h5 class="card-title mt-3">02. Choose Your Dream Car</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-2 animate" id="step3_div">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="~/static/homepage/step_03.svg" alt="" class="img-fluid w-50 h-50">
+                        <h5 class="card-title mt-3">03. Pick Up and Begin Your Ride</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<div class="container mt-5">
+    <h3 class="mb-3 fs-1 text-center animate" style="font-family: Tektur;" id="promo-heading">
+        #1 Car Rental Service
+    </h3>
+    <div class="row">
+        <div class="col-md-7 my-auto animate" id="promo-col-left-1">
+
+            <h4 class="text-center text-primary" style="font-family: 'Tektur';">Explore Our Wide Range of Cars</h4>
+            <hr>
+            <p>
+                From sleek sedans to adventurous SUVs and luxurious limousines, we offer a symphony of choices that
+                promises an unforgettable ride. Whether you're heading for a weekend getaway or a business trip,
+                find the perfect companion to match your aspirations. Our wide range of cars ensures there's
+                something for everyone, making every drive a journey worth remembering.
+            </p>
+            <p></p>
+        </div>
+        <div class="col-md-5 text-center animate" id="promo-col-right-1">
+            <img src="~/static/homepage/cars_ranges.png" alt="" class="img-fluid">
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-7 animate" id="promo-col-left-2">
+
+            <h4 class="text-center text-primary" style="font-family: 'Tektur';">Drive Confidently with Our Priority Customer Support</h4>
+            <hr>
+            <p>
+                Our dedicated customer support team is always at your service, ensuring a seamless and stress-free
+                rental experience. Have a question? Need assistance on the road? We've got your back. Your
+                satisfaction is our top priority, and our support team is here to make every mile of your journey as
+                smooth as the ride itself.
+            </p>
+        </div>
+
+        <div class="col-md-5 text-center mb-2 animate" id="promo-col-right-2">
+            <img src="~/static/homepage/customer_support.png" alt="" class="img-fluid">
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-7 animate" id="promo-col-left-3">
+
+            <h4 class="text-center text-primary" style="font-family: 'Tektur';">Unleash Affordability with Our Reasonable Cost</h4>
+            <hr>
+            <p>
+                Why compromise on quality when you can have the best at a reasonable cost? We believe in making
+                luxury and convenience accessible to all. Our transparent pricing ensures you get the best value for
+                your money, without any hidden surprises. Affordable excellence is not just a promise; it's our
+                commitment to providing you with a premium driving experience without breaking the bank.
+            </p>
+        </div>
+
+        <div class="col-md-5 text-center mb-2 animate" id="promo-col-right-3">
+            <img src="~/static/homepage/save.png" alt="" class="img-fluid">
+        </div>
+    </div>
+
+</div>
+
+<!-- FAQ Section -->
+<div class="container my-3">
+    <h3 class="my-2 text-primary" style="font-family: 'Tektur';">FAQs</h3>
+
+    <div class="accordion" id="FAQ">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    What are the eligibility requirements to rent a car with RentNGo Rentals?
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#FAQ">
+                <div class="accordion-body">
+
+                    <ul>
+                        <li>
+                            You must be at least 21 years old and have a valid driver's license from your home country.
+                        </li>
+                        <li>Additional proof of identity and residency may be requested.</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    How do you handle roadside assistance if I encounter car trouble?
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#FAQ">
+                <div class="accordion-body">
+                    <ul>
+                        <li>We provides 24/7 roadside assistance throughout our service area. Simply call our emergency hotline, and we'll dispatch a qualified technician to assist you.</li>
+                        <li>Please note that certain services, such as towing or fuel delivery, may incur additional charges depending on the situation.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    What happens if I return the car late?
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#FAQ">
+                <div class="accordion-body">
+                    <ul>
+                        <li>Late returns may result in additional charges.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                    Do I need to refill the gas tank before returning my RentNGo car?
+                </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#FAQ">
+                <div class="accordion-body">
+                    <ul>
+                        <li>Yes, RentNGo requires cars to be returned with a full tank.</li>
+                        <li>Prepay options for a full tank may be available.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
